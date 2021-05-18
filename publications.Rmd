@@ -2,6 +2,12 @@
 title: "Publications"
 ---
 
+<style type="text/css">
+h1.title {
+  text-align: center;
+}
+</style>
+
 ### Peer-reviewed publications
 
 \* denotes co-first authors
