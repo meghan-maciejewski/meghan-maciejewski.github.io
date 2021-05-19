@@ -23,7 +23,7 @@ navbar:
     - icon: fab fa-twitter
       href: https://twitter.com/MeghanFMac
     - icon: fas fa-envelope
-      href: mailto:<mfm8@illinois.edu>
+      href: mailto:mfm8@illinois.edu
 
 
 output:
