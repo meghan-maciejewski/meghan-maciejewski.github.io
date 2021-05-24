@@ -10,22 +10,24 @@ h1.title {
 
 In my spare time I like sketching the animals from lab, cool specimens from the beach, or just random creatures that I find particularly charismatic (mostly fishes). I highly recommend checking out #SundayFishSketch on Twitter for some fishy art done by people much more talented than me. 
 
+
 \
 \
 
 ```{r, echo = F}
 library(magrittr)
 library(bsplus)
-bs_carousel(id = "fish") %>%
-  bs_append(content = bs_carousel_image(src = "doodles/reticulatespikefish.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "doodles/tophalf.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "doodles/clownfish and cardinalfish.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "doodles/0212181922.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "doodles/0302191311.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "doodles/0317191105a.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "doodles/0422191405.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "doodles/0801191951.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "doodles/0801191952.jpg")) %>%
-  bs_append(content = bs_carousel_image(src = "doodles/0801191954.jpg")) 
+bs_carousel(id = "fish", use_indicators = TRUE) %>%
+  bs_append(content = bs_carousel_image(src = "doodles/reticulatespikefish.jpg", style="height: 500px")) %>%
+  bs_append(content = bs_carousel_image(src = "doodles/tophalf.jpg", style="height: 500px")) %>%
+  bs_append(content = bs_carousel_image(src = "doodles/clownfish and cardinalfish.jpg", style="height: 500px")) %>%
+  bs_append(content = bs_carousel_image(src = "doodles/0212181922.jpg", style="height: 500px")) %>%
+  bs_append(content = bs_carousel_image(src = "doodles/0302191311.jpg", style="height: 500px")) %>%
+  bs_append(content = bs_carousel_image(src = "doodles/0317191105a.jpg", style="height: 500px")) %>%
+  bs_append(content = bs_carousel_image(src = "doodles/0422191405.jpg", style="height: 500px")) %>%
+  bs_append(content = bs_carousel_image(src = "doodles/0801191951.jpg", style="height: 500px")) %>%
+  bs_append(content = bs_carousel_image(src = "doodles/0801191952.jpg", style="height: 500px")) %>%
+  bs_append(content = bs_carousel_image(src = "doodles/0801191954.jpg", style="height: 500px")) 
 ```
+
 
