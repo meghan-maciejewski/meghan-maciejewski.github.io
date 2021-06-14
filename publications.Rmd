@@ -25,7 +25,7 @@ h1.title {
 
 \ 
 
-### Under review, under revision, or in prep
+### Under review/ in prep
 
 Hund AK\*, Fuess LE\*, Kenney ML, **Maciejewski MF**, Marini JM, Shim KC, Bolnick DI. Rapid evolution of parasite resistance via improved recognition and accelerated immune activation and deactivation. under revision, currently available on [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.07.03.186569v1)
 
