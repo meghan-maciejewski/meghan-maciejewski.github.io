@@ -11,8 +11,8 @@ h1.title {
 <div align="center">
   <a 
   class="btn btn-primary btn-lg" 
-  href="May_2021_meghan_maciejewski_CV.pdf" 
+  href="August_2021_meghan_maciejewski_CV.pdf" 
   role="button">
-    Curriculum vitae last updated: April 2021
+    Curriculum vitae last updated: August 2021
   </a>
 </div>
