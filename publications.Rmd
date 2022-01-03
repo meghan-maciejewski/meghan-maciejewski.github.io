@@ -8,13 +8,15 @@ h1.title {
 }
 </style>
 
-### Peer-reviewed publications
+### Peer-reviewed
 
 \* denotes co-first authors
+
 
 #### 2020
 
 **Maciejewski MF**, Jiang C, Stuart YE, Bolnick DI. 2020. Microhabitat contributes to microgeographic divergence in threespine stickleback. Evolution. 74: 749-763. [Link](https://onlinelibrary.wiley.com/doi/abs/10.1111/evo.13942)
+
 
 #### 2019
 
@@ -25,12 +27,11 @@ h1.title {
 
 \ 
 
-### Under review/ in prep
+### In press
 
-Hund AK\*, Fuess LE\*, Kenney ML, **Maciejewski MF**, Marini JM, Shim KC, Bolnick DI. Rapid evolution of parasite resistance via improved recognition and accelerated immune activation and deactivation. under revision, currently available on [bioRxiv](https://www.biorxiv.org/content/10.1101/2020.07.03.186569v1)
-
+Hund AK\*, Fuess LE\*, Kenney ML, **Maciejewski MF**, Marini JM, Shim KC, Bolnick DI. Population-level variation in parasite resistance due to differences in immune initiation and rate of response. Evol. Lett. 
 
 \
 \
 
-For the most up-to-date list of publications see my [Google Scholar](https://scholar.google.com/citations?user=EJt3cOkAAAAJ&hl=en) page
+For the most up-to-date list of publications, see my [Google Scholar](https://scholar.google.com/citations?user=EJt3cOkAAAAJ&hl=en) page
