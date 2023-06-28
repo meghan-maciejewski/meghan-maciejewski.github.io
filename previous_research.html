@@ -13,8 +13,8 @@
 
 <title>Previous Research</title>
 
-<script src="site_libs/header-attrs-2.7/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.21/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -32,8 +32,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.0/css/v4-shims.min.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -54,6 +54,7 @@ if (window.hljs) {
   }
 }
 </script>
+
 
 
 
@@ -83,6 +84,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -140,11 +144,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -173,8 +181,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -182,16 +190,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -235,7 +236,7 @@ $(document).ready(function () {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -258,9 +259,6 @@ $(document).ready(function () {
 </li>
 <li>
   <a href="CV.html">CV</a>
-</li>
-<li>
-  <a href="doodles.html">Doodles</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -308,9 +306,19 @@ h1.title {
 }
 </style>
 <div align="center">
-<p><span style="color: teal; font-size: 15pt; font-weight: bold">Bolnick lab | University of Connecticut</span></p>
+<p><span style="color: teal; font-size: 15pt; font-weight: bold">Bolnick
+lab | University of Connecticut</span></p>
 </div>
-<p>Research in the <a href="https://bolnicklab.wordpress.com">Bolnick lab</a> broadly focuses on ecology, evolution, and immunology. During my time as a tech (2018-2020), the lab’s primary interest was the evolution of peritoneal fibrosis, an immune response some populations of threespine stickleback show in response to infection by <em>Schistocephalus solidus</em> tapeworms. I provided assistance on experiments, maintained the lab populations of stickleback, and was involved in a few data-analysis side projects (<span style="color: teal">Maciejewski et al. 2019, Evol. Ecol. Res.; Maciejewski et al. 2020, Evolution</span>).</p>
+<p>Research in the <a href="https://bolnicklab.wordpress.com">Bolnick
+lab</a> broadly focuses on ecology, evolution, and immunology. During my
+time as a tech (2018-2020), the lab’s primary interest was the evolution
+of peritoneal fibrosis, an immune response some populations of
+threespine stickleback show in response to infection by
+<em>Schistocephalus solidus</em> tapeworms. I provided assistance on
+experiments, maintained the lab populations of stickleback, and was
+involved in a few data-analysis side projects (<span
+style="color: teal">Maciejewski et al. 2019, Evol. Ecol. Res.;
+Maciejewski et al. 2020, Evolution</span>).</p>
 <table>
 <colgroup>
 <col width="33%" />
@@ -320,22 +328,36 @@ h1.title {
 <thead>
 <tr class="header">
 <th align="center"><img src="previous%20research/copepod.jpg" /></th>
-<th align="center"><img src="previous%20research/stickleback.jpeg" /></th>
-<th align="center"><img src="previous%20research/fish-elastomer.jpeg" /></th>
+<th align="center"><img
+src="previous%20research/stickleback.jpeg" /></th>
+<th align="center"><img
+src="previous%20research/fish-elastomer.jpeg" /></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><em>A copepod being screened for tapeworm infection. Schistocephalus are trophically transmitted to stickleback via copepods.</em></td>
-<td align="center"><em>A stickleback with its tapeworm from an experimental infection.</em></td>
-<td align="center"><em>Stickleback tagged with fluorescent elastomer for an immunity experiment.</em></td>
+<td align="center"><em>A copepod being screened for tapeworm infection.
+Schistocephalus are trophically transmitted to stickleback via
+copepods.</em></td>
+<td align="center"><em>A stickleback with its tapeworm from an
+experimental infection.</em></td>
+<td align="center"><em>Stickleback tagged with fluorescent elastomer for
+an immunity experiment.</em></td>
 </tr>
 </tbody>
 </table>
 <div align="center">
-<p><span style="color: teal; font-size: 15pt; font-weight: bold">Bleakley lab | Stonehill College</span></p>
+<p><span
+style="color: teal; font-size: 15pt; font-weight: bold">Bleakley lab |
+Stonehill College</span></p>
 </div>
-<p>The <a href="https://www.smallcheerfulcreatures.org">Bleakley lab</a> uses guppies to study the evolution of cooperation and indirect genetic effects. As an undergraduate in the lab (2016-2018) I worked on various projects related to behavior and sensory ecology (eg. quantifying variation in lateral line morphology, measuring social learning and cooperation, and characterizing individual differences in responsiveness to visual and chemical sensory cues).</p>
+<p>The <a href="https://www.smallcheerfulcreatures.org">Bleakley lab</a>
+uses guppies to study the evolution of cooperation and indirect genetic
+effects. As an undergraduate in the lab (2016-2018) I worked on various
+projects related to behavior and sensory ecology (eg. quantifying
+variation in lateral line morphology, measuring social learning and
+cooperation, and characterizing individual differences in responsiveness
+to visual and chemical sensory cues).</p>
 <table>
 <colgroup>
 <col width="50%" />
@@ -343,21 +365,35 @@ h1.title {
 </colgroup>
 <thead>
 <tr class="header">
-<th align="center"><img src="previous%20research/predatorassay_orig.jpg" /></th>
+<th align="center"><img
+src="previous%20research/predatorassay_orig.jpg" /></th>
 <th align="center"><img src="previous%20research/img-8054.jpg" /></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><em>An antipredator assay with a model pike cichlid, used to quantify cooperative predator inspection behavior.</em></td>
-<td align="center"><em>A small wildtype guppy in an optomotor assay, used to estimate visual acuity.</em></td>
+<td align="center"><em>An antipredator assay with a model pike cichlid,
+used to quantify cooperative predator inspection behavior.</em></td>
+<td align="center"><em>A small wildtype guppy in an optomotor assay,
+used to estimate visual acuity.</em></td>
 </tr>
 </tbody>
 </table>
 <div align="center">
-<p><span style="color: teal; font-size: 15pt; font-weight: bold">Mullineaux lab | Woods Hole Oceanographic Institution</span></p>
+<p><span
+style="color: teal; font-size: 15pt; font-weight: bold">Mullineaux lab |
+Woods Hole Oceanographic Institution</span></p>
 </div>
-<p>Research in the <a href="https://www2.whoi.edu/site/mullineauxlab/research/">Mullineaux lab</a> focuses on marine larval dispersal and benthic ecology. As a Summer Student Fellow and Guest Student in the lab (2017-2018), I investigated the function of helical swimming behavior in oyster larvae. Many planktonic marine larvae swim in helices, however the function of this behavior is largely unknown. For my summer project, I tested whether helical swimming may serve as a feeding behavior and/or a response to conspecific chemical settlement cues (<span style="color: teal">Maciejewski et al. 2019, JEMBE</span>).</p>
+<p>Research in the <a
+href="https://www2.whoi.edu/site/mullineauxlab/research/">Mullineaux
+lab</a> focuses on marine larval dispersal and benthic ecology. As a
+Summer Student Fellow and Guest Student in the lab (2017-2018), I
+investigated the function of helical swimming behavior in oyster larvae.
+Many planktonic marine larvae swim in helices, however the function of
+this behavior is largely unknown. For my summer project, I tested
+whether helical swimming may serve as a feeding behavior and/or a
+response to conspecific chemical settlement cues (<span
+style="color: teal">Maciejewski et al. 2019, JEMBE</span>).</p>
 <table>
 <colgroup>
 <col width="33%" />
@@ -367,22 +403,38 @@ h1.title {
 <thead>
 <tr class="header">
 <th align="center"><img src="previous%20research/WHOI_2017.jpg" /></th>
-<th align="center"><img src="previous%20research/inserting-pipette-to-flask_orig.jpg" /></th>
-<th align="center"><img src="previous%20research/MATLAB_helix.png" /></th>
+<th align="center"><img
+src="previous%20research/inserting-pipette-to-flask_orig.jpg" /></th>
+<th align="center"><img
+src="previous%20research/MATLAB_helix.png" /></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><em>Pipetting a sample of oyster larvae. Trials were conducted in a dark environmental chamber because larval swimming is influenced by light. Photo credit: Dr. Kirstin Meyer-Kaiser</em></td>
-<td align="center"><em>Introducing oyster larvae into a flask to record swimming behavior. Larvae were slowly introduced via gravity to minimize water currents which could be mistaken for active swimming. Photo credit: Dr. Kirstin Meyer-Kaiser.</em></td>
-<td align="center"><em>MATLAB plot tracking a single oyster larva swimming in a helix.</em></td>
+<td align="center"><em>Pipetting a sample of oyster larvae. Trials were
+conducted in a dark environmental chamber because larval swimming is
+influenced by light. Photo credit: Dr. Kirstin Meyer-Kaiser</em></td>
+<td align="center"><em>Introducing oyster larvae into a flask to record
+swimming behavior. Larvae were slowly introduced via gravity to minimize
+water currents which could be mistaken for active swimming. Photo
+credit: Dr. Kirstin Meyer-Kaiser.</em></td>
+<td align="center"><em>MATLAB plot tracking a single oyster larva
+swimming in a helix.</em></td>
 </tr>
 </tbody>
 </table>
 <div align="center">
-<p><span style="color: teal; font-size: 15pt; font-weight: bold">Drew lab | University of Massachusetts Dartmouth</span></p>
+<p><span style="color: teal; font-size: 15pt; font-weight: bold">Drew
+lab | University of Massachusetts Dartmouth</span></p>
 </div>
-<p>I joined the Drew lab for the summer of 2016 through a National Science Foundation Research Experience for Undergraduates. At the time, the lab was interested in the molecular mechanisms facilitating the mutualistic interaction between damselfishes and their host sea anemones. For my project, I used qPCR to compare the expression levels of a mucin-secretion gene (thought to facilitate the formation of a protective mucus layer on the skin of damselfish) in skin tissue from clownfish that were or were not associated with sea anemones.</p>
+<p>I joined the Drew lab for the summer of 2016 through a National
+Science Foundation Research Experience for Undergraduates. At the time,
+the lab was interested in the molecular mechanisms facilitating the
+mutualistic interaction between damselfishes and their host sea
+anemones. For my project, I used qPCR to compare the expression levels
+of a mucin-secretion gene (thought to facilitate the formation of a
+protective mucus layer on the skin of damselfish) in skin tissue from
+clownfish that were or were not associated with sea anemones.</p>
 <table>
 <thead>
 <tr class="header">

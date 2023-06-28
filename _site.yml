@@ -13,8 +13,7 @@ navbar:
       href: publications.html    
     - text: "CV"
       href: CV.html
-    - text: "Doodles"
-      href: doodles.html
+  
   right:
     - icon: ai ai-google-scholar-square
       href: https://scholar.google.com/citations?user=EJt3cOkAAAAJ&hl=en
