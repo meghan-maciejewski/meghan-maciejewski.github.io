@@ -14,4 +14,4 @@ knitr::include_graphics("intro page/mfm8@illinois.edu.jpg")
 ```
 </div>
 
-I am a second-year PhD student in [Dr. Alison Bell's](https://alisonbelllab.web.illinois.edu) lab in the [Department of Evolution, Ecology, and Behavior](https://sib.illinois.edu/eeb/) at the University of Illinois at Urbana-Champaign. I'm broadly interested in social evolution and behavioral ecology. In the Bell lab, my research aims to describe the mechanisms underlying an evolutionary loss of paternal care behavior in threespine stickleback.
+I am a PhD candidate in [Dr. Alison Bell's](https://alisonbelllab.web.illinois.edu) lab in the [Department of Evolution, Ecology, and Behavior](https://sib.illinois.edu/eeb/) at the University of Illinois Urbana-Champaign. I'm broadly interested in social evolution and behavioral ecology. In the Bell lab, my research aims to describe the neuroendocrine mechanisms underlying an evolutionary loss of paternal care behavior in threespine stickleback.
